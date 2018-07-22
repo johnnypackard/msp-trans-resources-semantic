@@ -19,31 +19,32 @@ import {
 
 const HomepageHeading = ({ mobile }) => (
     <Container text>
-        <Header
-            as='h1'
-            content='MSP Transgender Resource Project'
-            inverted
-            style={{
-                fontSize: mobile ? '2em' : '4em',
-                fontWeight: 'normal',
-                marginBottom: 0,
-                marginTop: mobile ? '1.5' : '3em',
-            }}
-        />
-        <Header
-            as='h2'
-            content='"Sometimes the people around you won&#39;t understand your journey. They don&#39;t need to, it&#39;s not for them."'
-            inverted
-            style={{
-                fontSize: mobile ? '1.5em' : '1.7em',
-                fontWeight: 'normal',
-                marginTop: mobile ? '0.5em' : '1.5em',
-            }}
-        />
-        <Button as={Link} to='resources' primary size='huge'>
-            Find Resources
-            <Icon name='right arrow' />            
-        </Button>
+            <Header
+                as='h1'
+                content='MSP Transgender Resource Project'
+                inverted
+                style={{
+                    fontSize: mobile ? '2em' : '4em',
+                    fontWeight: 'normal',
+                    marginBottom: 0,
+                    marginTop: mobile ? '1.5' : '3em',
+                }}
+            />
+            <Header
+                as='h2'
+                content='"Sometimes the people around you won&#39;t understand your journey. They don&#39;t need to, it&#39;s not for them."'
+                inverted
+                style={{
+                    fontSize: mobile ? '1.5em' : '1.7em',
+                    fontWeight: 'normal',
+                    marginTop: mobile ? '0.5em' : '1.5em',
+                }}
+            />
+            <Button as={Link} to='resources' primary size='huge'>
+                Find Resources
+                <Icon name='right arrow' />            
+            </Button> 
+        {/* <Image fluid src={window.location.origin + '/images/transflagbg.jpg'} /> */}
     </Container>
 )
 
@@ -82,17 +83,17 @@ class DesktopContainer extends Component {
                             size='large'
                         >
                             <Container>
-                                <Menu.Item as='a' active>
+                                <Menu.Item as={Link} to='/homepage' active>
                                     Home
                                 </Menu.Item>
-                                <Menu.Item as='a'>About</Menu.Item>
-                                <Menu.Item as='a'>Donate</Menu.Item>
-                                <Menu.Item as='a'>Volunteer</Menu.Item>
+                                <Menu.Item as={Link} to='/about'>About</Menu.Item>
+                                <Menu.Item as={Link} to='/donate'>Donate</Menu.Item>
+                                <Menu.Item as={Link} to='/volunteer'>Volunteer</Menu.Item>
                                 <Menu.Item position='right'>
-                                    <Button as='a' inverted={!fixed}>
+                                    <Button as={Link} to='/login' inverted={!fixed}>
                                         Log In
                                     </Button>
-                                    <Button as='a' inverted={!fixed} style={{ marginLeft: '0.5em' }}>
+                                    <Button as={Link} to='/register' inverted={!fixed} style={{ marginLeft: '0.5em' }}>
                                         Sign Up
                                     </Button>
                                 </Menu.Item>
@@ -134,11 +135,11 @@ class MobileContainer extends Component {
                         <Menu.Item as='a' active>
                             Home
                         </Menu.Item>
-                        <Menu.Item as='a'>About</Menu.Item>
-                        <Menu.Item as='a'>Donate</Menu.Item>
-                        <Menu.Item as='a'>Volunteer</Menu.Item>
-                        <Menu.Item as='a'>Log In</Menu.Item>
-                        <Menu.Item as='a'>Sign Up</Menu.Item>
+                        <Menu.Item as={Link} to='/about'>About</Menu.Item>
+                        <Menu.Item as={Link} to='/donate'>Donate</Menu.Item>
+                        <Menu.Item as={Link} to='/volunteer'>Volunteer</Menu.Item>
+                        <Menu.Item as={Link} to='/login'>Log In</Menu.Item>
+                        <Menu.Item as={Link} to='/register'>Sign Up</Menu.Item>
                     </Sidebar>
 
                     <Sidebar.Pusher
@@ -158,10 +159,10 @@ class MobileContainer extends Component {
                                         <Icon name='sidebar' />
                                     </Menu.Item>
                                     <Menu.Item position='right'>
-                                        <Button as='a' inverted>
+                                        <Button as={Link} to='/login' inverted>
                                             Log In
                                         </Button>
-                                        <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
+                                        <Button as={Link} to='/register' inverted style={{ marginLeft: '0.5em' }}>
                                             Sign Up
                                         </Button>
                                     </Menu.Item>
@@ -213,13 +214,13 @@ const HomepageLayout = () => (
                             On February 10, 2017, the Minneapolis City Council approved Resolution 2017R-06, establishing the Transgender Equity Council. The council serves as an advisory board to the City on matters of importance to the Trans community.
                         </p>
                     </Grid.Column>
-                    <Grid.Column floated='right' width={6}>
-                        <Image bordered rounded size='large' src='/documentation/images/transRights.png' />
+                    <Grid.Column floated='right' width={8}>
+                        <Image bordered rounded size='big' src={window.location.origin + '/images/transRights.png'} />
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column textAlign='center'>
-                        <Button size='huge'>Learn More</Button>
+                        <Button size='huge' primary>How can I help?</Button>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
@@ -257,7 +258,7 @@ const HomepageLayout = () => (
                     first-hand experiences of local businesses, offering assistance to other trans folx who are seeking safe, 
                     respectful, and welcoming resources.
                 </p>
-                <Button as='a' size='large'>
+                <Button primary as={Link} to='/resources' size='large'>
                     Find Resources
                 </Button>
                 <Divider
@@ -266,35 +267,69 @@ const HomepageLayout = () => (
                     horizontal
                     style={{ margin: '3em 0em', textTransform: 'uppercase' }}
                 >
-                    <a href='#'>Know Your Rights</a>
+                    <a href='https://www.outfront.org/legal-help'>Know Your Rights</a>
                 </Divider>
-                <Header as='h3' style={{ fontSize: '2em' }}>
-                    Discrimination Prohibited under MN Law
-                </Header>
-                <ol style={{ fontSize: '1.33em' }}>
-                    <li>Employment, including labor union membership</li>
-                    <li>Real property &#40;Housing&#41;</li>
-                    <li>Publc accommodations &#40;such as theaters or restaurants&#41;</li>
-                    <li>Public services &#40;those provided by the government&#41;</li>
-                    <li>Education, including private, secular schools</li>
-                    <li>Credit</li>
-                    <li>Business contracting</li>
-                </ol>
-                <p style={{ fontSize: '1.33em' }}>
-                    If you feel you have been a victim of discrimination, contact
-                    <br /> 
-                    <b>Gender Justice </b>
-                    <br /> 
-                    Supporting gender non-conforming and trans legal issues since 2010.
-                    <Button.Group>
-                        <Button content='651-789-2090' icon='phone' labelPosition='left' />
-                        <Button.Or />
-                        <Button content='E-Mail' icon='at' labelPosition='right' />
-                    </Button.Group>
-                </p>
-                <Button as='a' a href='http://www.genderjustice.us/' size='large'>
-                    Visit Site
-                </Button>
+
+                <Grid>
+                    <Grid.Row>
+                        <Grid.Column width={8}>
+                            <Segment>
+                                <Header textAlign='center' as='h3' style={{ fontSize: '2em' }}>
+                                    Discrimination Prohibited by MN Law
+                            </Header>    
+                            </Segment>
+                            <Grid.Row vertical-align='top'>
+                                <ol style={{ fontSize: '1.33em' }}>
+                                    <li>Employment, including labor union membership</li>
+                                    <li>Real property &#40;Housing&#41;</li>
+                                    <li>Publc accommodations &#40;such as theaters or restaurants&#41;</li>
+                                    <li>Public services &#40;those provided by the government&#41;</li>
+                                    <li>Education, including private, secular schools</li>
+                                    <li>Credit</li>
+                                    <li>Business contracting</li>
+                                </ol>    
+                            </Grid.Row>
+                            
+                        </Grid.Column>
+                        <Grid.Column width={8}>
+                            <Segment>
+                                <Header textAlign='center' as='h3' style={{ fontSize: '2em' }}>
+                                    Discrimination Which Still Remains Legal
+                                </Header>    
+                            </Segment>
+                                <Grid.Row vertical-align='top'>
+                                    <ol style={{ fontSize: '1.33em' }}>
+                                        <li>Youth-serving agencies (employees or volunteers only)</li>
+                                        <li>Duplex rentals</li>
+                                        <li>Religious institutions (applies to education)</li>
+                                        <li>Employment, housing/real property, or use of facilities, but not “secular business activities”</li>
+                                    </ol>    
+                                </Grid.Row>
+                            
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+                <Segment textAlign='center'>
+                    <p style={{ fontSize: '1.33em' }}>
+                        If you feel you have been a victim of discrimination, contact
+                        <br /> 
+                        <a href='http://www.genderjustice.us/' >GenderJustice.us</a>
+                        <br />
+                        Supporting gender non-conforming and trans legal issues since 2010.
+                    </p>
+                    <Grid centered columns={3}>
+                        <Segment compact vertical> 
+                            <Button.Group>
+                                <Button as='a' href='tel:651-789-2090' color='pink' content='651-789-2090' icon='phone' labelPosition='left'>
+                                </Button>
+                                <Button.Or />
+                                <Button as='a' href='mailto:CHRISTY.HALL@GENDERJUSTICE.US' color='blue' content='E-Mail' icon='at' labelPosition='right' />
+                            </Button.Group>  
+                        </Segment> 
+                    </Grid> 
+                       
+                </Segment>
+                
             </Container>
         </Segment>
         <Segment inverted vertical style={{ padding: '5em 0em' }}>
@@ -311,13 +346,29 @@ const HomepageLayout = () => (
                         <Grid.Column>
                             <Header inverted as='h4' content='Additional Info' />
                             <List link inverted>
-                                <List.Item as='a'>Genderbread Person</List.Item>
-                                <List.Item as='a'>Transgender FAQ</List.Item>
-                                <List.Item as='a'>External Resources</List.Item>
-                                <List.Item as='a'>Legal Help</List.Item>
+                                <List.Item>
+                                    <a href="https://www.genderbread.org/">
+                                        Genderbread Person
+                                    </a>
+                                </List.Item>
+                                <List.Item>
+                                    <a href="https://www.hrc.org/resources/transgender-faq">
+                                        Transgender FAQ
+                                    </a>
+                                </List.Item>
+                                <List.Item>
+                                    <a href="https://www.glaad.org/transgender/resources">
+                                        External Resources
+                                    </a>
+                                </List.Item>
+                                <List.Item>
+                                    <a href="https://www.lambdalegal.org/issues/transgender-rights">
+                                        Legal Help
+                                    </a>
+                                </List.Item>
                             </List>
                         </Grid.Column>
-                        <Grid.Column width={7}>
+                        <Grid.Column floated='right' width={5}>
                             <Header as='h4' inverted>
                                 About this website
                             </Header>
@@ -326,11 +377,11 @@ const HomepageLayout = () => (
                                 to satisfy the Solo Project requirement. 
                             </p>
                             <p>
-                                <sub>"Citation: [1] URLhttps://www.glaad.org/tdor
-                                        Website TitleGLAAD
-                                        Article TitleTransgender Day of Remembrance #TDOR - November 20
-                                        Date PublishedNovember 17, 2017
-                                        Date AccessedJuly 16, 2018 "</sub>
+                                <sub>"Citation: [1] <a href='https://www.glaad.org/tdor'>https://www.glaad.org/tdor</a>
+                                        Website Title: GLAAD
+                                        Article Title: Transgender Day of Remembrance #TDOR - November 20
+                                        Date Published: November 17, 2017
+                                        Date Accessed: July 16, 2018 "</sub>
                             </p>
                         </Grid.Column>
                     </Grid.Row>

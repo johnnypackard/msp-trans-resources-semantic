@@ -72,41 +72,44 @@ class LoginPage extends Component {
           }
         `}</style>
         <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
-          <Grid.Column style={{ maxWidthL: 450 }}>
+          <Grid.Column style={{ maxWidth: 450 }}>
             <Header as='h2' color='teal' textAlign='center'>
+              <Image src={window.location.origin + '/images/TransIcon.png'} />
               Log-in to your account
             </Header>
-            <Form size='large' onSubmit={this.login}>
+            <Form size='large'>
               <Segment stacked>
-                <Form.Input
-                  fluid
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Username'
-                  type="text"
-                  name="username"
-                  value={this.state.username}
-                  onChange={this.handleInputChangeFor('username')}
-                />
-                <Form.Input
-                  fluid
-                  icon='lock'
-                  iconPosition='left'
-                  placeholder='Password'
-                  type="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.handleInputChangeFor('password')}
-                />
-                <Button 
-                  color='teal' 
-                  fluid size='large'
-                  type="submit"
-                  name="submit"
-                  value="Log In"  
-                >
-                Log-In
-                </Button>
+                <Form.Field>
+                  <input
+                    placeholder='Username'
+                    type="text"
+                    name="username"
+                    value={this.state.username}
+                    onChange={this.handleInputChangeFor('username')}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <input
+                    placeholder='Password'
+                    type="password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.handleInputChangeFor('password')}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <Button 
+                    primary 
+                    fluid
+                    size='large'
+                    type="submit"
+                    name="submit"
+                    value="Log In" 
+                    onSubmit={this.login}
+                  > 
+                    Log-In
+                  </Button> 
+                </Form.Field>
               </Segment>
             </Form>
             <Message>

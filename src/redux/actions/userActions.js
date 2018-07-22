@@ -10,4 +10,6 @@ export const USER_ACTIONS = {
   SET_FAVORITE: 'SET_FAVORITE',
 };
 
-
+export const fetchUser = () => ({
+  type: USER_ACTIONS.FETCH_USER,
+});

@@ -1,6 +1,12 @@
+CREATE TABLE person (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR (80) UNIQUE NOT NULL,
+    password VARCHAR (1000) NOT NULL
+);
+
 CREATE TABLE registered_users (
 	id SERIAL PRIMARY KEY,
-	person_id INT REFERENCES "businesses",
+	person_id INT REFERENCES "person",
 	profile_image VARCHAR (1000),
 	gender VARCHAR (100),
 	pronouns VARCHAR (100),
@@ -16,9 +22,7 @@ CREATE TABLE businesses (
 	race VARCHAR (100),
 	language VARCHAR (100),
 	image_url VARCHAR (2083),
-	username VARCHAR (80) UNIQUE NOT NULL,
-    password VARCHAR (1000) NOT NULL,
-	biz_id INT REFERENCES "resources",
+	biz_id INT REFERENCES "resources"
 );
 
 CREATE TABLE resources (
@@ -31,10 +35,20 @@ CREATE TABLE resources (
     language VARCHAR (100),
     image_url VARCHAR (2083),
 	biz_notes VARCHAR (2083),
-	resources_id INT REFERENCES "search",
+	resources_id INT REFERENCES "resource_categories"
 );
  
 CREATE TABLE search (
 	id SERIAL PRIMARY KEY,
 	search_id INT REFERENCES "businesses"
+);
+
+CREATE TABLE resource_categories (
+	id SERIAL PRIMARY KEY,
+	community_id INT,
+	education_id INT,
+	financial_id INT,
+	healthcare_id INT,
+	housing_id INT,
+	legal_id INT
 );

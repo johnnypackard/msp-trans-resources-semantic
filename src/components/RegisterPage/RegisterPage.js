@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -9,7 +10,6 @@ class RegisterPage extends Component {
     this.state = {
       username: '',
       password: '',
-      message: '',
     };
   }
 
@@ -67,9 +67,70 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className='login-form'>
         {this.renderAlert()}
-        <form onSubmit={this.registerUser}>
+        <style>{`
+          body > div,
+          body > div > div
+          body > div > div > div.login-form {
+            height: 100%;
+          }
+        `}</style>
+        <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <Header as='h2' color='teal' textAlign='center'>
+              Register for an account
+            </Header>
+            <Form size='large'>
+              <Segment stacked>
+                <Form.Field>
+                  <input
+                    placeholder='Username'
+                    type='text'
+                    name='username'
+                    value={this.state.username}
+                    onChange={this.handleInputChangeFor('username')}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <input
+                    placeholder='Password'
+                    type='password'
+                    name='password'
+                    value={this.state.password}
+                    onChange={this.handleInputChangeFor('password')}
+                  />
+                </Form.Field>
+                <Segment>
+                  <Button
+                    fluid
+                    size='large'
+                    type='submit'
+                    name='submit'
+                    value='Register'
+                    onSubmit={this.registerUser}
+                    as={Link} to='/home'
+                  >
+                  Register
+                  </Button>
+                </Segment>
+                <Segment>
+                  <Button 
+                    as={Link} 
+                    to='/homepage' 
+                    name='cancel' 
+                    negative
+                    fluid
+                    size='large'
+                  >
+                  Cancel
+                  </Button>
+                </Segment>
+              </Segment>
+            </Form>
+          </Grid.Column>
+        </Grid>
+        {/* <form onSubmit={this.registerUser}>
           <h1>Register User</h1>
           <div>
             <label htmlFor="username">
@@ -101,7 +162,7 @@ class RegisterPage extends Component {
             />
             <Link to="/home">Cancel</Link>
           </div>
-        </form>
+        </form> */}
       </div>
     );
   }

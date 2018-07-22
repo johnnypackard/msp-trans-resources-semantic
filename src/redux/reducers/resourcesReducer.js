@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const businesses = (state = [], action) => {
+const resources = (state = [], action) => {
     switch (action.type) {
         case 'UPDATE_RESOURCES':
             return [...action.payload]

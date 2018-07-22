@@ -6,16 +6,16 @@ class ResourcesPage extends Component {
     render() {
         return(
             <div>
-                <Grid columns={3} divided>
+                <Grid container stackable centered columns={3} columns='equal' >
                     <Grid.Row>
-                        <Grid.Column>
+                        <Grid.Column textAlign='center'>
                             <Card>
                                 <Image>
                                     ...
                                 </Image>
                                 <Card.Content>
-                                    <Card.Header textAlign='center'>Housing</Card.Header>
-                                    <Card.Meta textAlign='center'>Do you need assistance with housing?</Card.Meta>
+                                    <Card.Header>Housing</Card.Header>
+                                    <Card.Meta>Do you need assistance with housing?</Card.Meta>
                                     <Card.Description>
                                         Homelessness is a critical issue for transgender people; one in five transgender individuals have experienced homelessness at some point in their lives.
                                     </Card.Description>
@@ -30,7 +30,7 @@ class ResourcesPage extends Component {
                                 </Card.Content>   
                             </Card>
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column textAlign='center'>
                             <Card>
                                 <Image>
                                     ...
@@ -53,7 +53,7 @@ class ResourcesPage extends Component {
                                 </Card.Content>   
                             </Card>
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column textAlign='center'>
                             <Card>
                                 <Image>
                                     ...
@@ -77,7 +77,7 @@ class ResourcesPage extends Component {
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column>
+                        <Grid.Column textAlign='center'>
                             <Card>
                                 <Image>
                                     ...
@@ -86,7 +86,7 @@ class ResourcesPage extends Component {
                                     <Card.Header textAlign='center'>Healthcare</Card.Header>
                                     <Card.Meta textAlign='center'>Mental and Medical Health</Card.Meta>
                                     <Card.Description>
-                                        Within the TBLGQI+ community, transgender people can face an exceptional degree of discomfort and bias, especially in healthcare.
+                                        Within the TBLGQI+ community, transgender people can face an exceptional degree of discomfort and bias, especially in healthcare. We have resources to help.
                                     </Card.Description>
                                 </Card.Content>
                                 <Card.Content extra>
@@ -99,7 +99,7 @@ class ResourcesPage extends Component {
                                 </Card.Content>   
                             </Card>
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column textAlign='center'>
                             <Card>
                                 <Image>
                                     ...
@@ -121,7 +121,7 @@ class ResourcesPage extends Component {
                                 </Card.Content>   
                             </Card>
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column textAlign='center'>
                             <Card>
                                 <Image>
                                     ...
@@ -130,7 +130,7 @@ class ResourcesPage extends Component {
                                     <Card.Header textAlign='center'>Community</Card.Header>
                                     <Card.Meta textAlign='center'>Local TBLGQI+ inclusive businesses.</Card.Meta>
                                     <Card.Description>
-                                        We've all experienced the fear of walking into a business for the first time, and wondering if it is a safe space. These resources are available to help lessen that fear.
+                                        We've all experienced the fear of walking into a business for the first time, and wondering if it is a safe space. These resources are available to help lessen the fears you may have.
                                     </Card.Description>
                                 </Card.Content>
                                 <Card.Content extra>

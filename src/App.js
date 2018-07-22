@@ -28,7 +28,7 @@ const App = () => (
             component={RegisterPage}
           />
           <Route
-            path="/user"
+            path="/home"
             component={UserPage}
           />
           <Route
