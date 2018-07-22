@@ -40,7 +40,7 @@ const HomepageHeading = ({ mobile }) => (
                 marginTop: mobile ? '0.5em' : '1.5em',
             }}
         />
-        <Button as={Link} to='login' primary size='huge'>
+        <Button as={Link} to='resources' primary size='huge'>
             Find Resources
             <Icon name='right arrow' />            
         </Button>
@@ -281,9 +281,16 @@ const HomepageLayout = () => (
                     <li>Business contracting</li>
                 </ol>
                 <p style={{ fontSize: '1.33em' }}>
-                    <b>If you feel you have been a victim of discrimination, contact Gender Justice</b>
-                    Supporting gender non-conforming and trans legal issues
-                    651-789-2090
+                    If you feel you have been a victim of discrimination, contact
+                    <br /> 
+                    <b>Gender Justice </b>
+                    <br /> 
+                    Supporting gender non-conforming and trans legal issues since 2010.
+                    <Button.Group>
+                        <Button content='651-789-2090' icon='phone' labelPosition='left' />
+                        <Button.Or />
+                        <Button content='E-Mail' icon='at' labelPosition='right' />
+                    </Button.Group>
                 </p>
                 <Button as='a' a href='http://www.genderjustice.us/' size='large'>
                     Visit Site
