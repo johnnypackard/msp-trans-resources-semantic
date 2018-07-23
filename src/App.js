@@ -13,6 +13,7 @@ import UserPage from './components/UserPage/UserPage';
 import InfoPage from './components/InfoPage/InfoPage';
 import HomepageHeading from './components/Homepage/Homepage';
 import ResourcesPage from './components/ResourcesPage/ResourcesPage';
+import HousingPage from './components/HousingPage/HousingPage';
 
 const App = () => (
     <div>
@@ -42,6 +43,10 @@ const App = () => (
           <Route
             path="/resources"
             component={ResourcesPage}
+          />
+          <Route
+            path="/housing"
+            component={HousingPage}
           />
           {/* OTHERWISE (no path!) */}
           <Route render={() => <h1>404</h1>} />

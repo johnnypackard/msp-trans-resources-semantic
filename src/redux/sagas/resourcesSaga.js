@@ -1,7 +1,7 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* getResources(action) {
+function* fetchResources(action) {
     try {
         const resourcesResponse = yield call(axios.get, '/api/resources');
         yield put({type: 'UPDATE_RESOURCES', payload: resourcesResponse.data})
@@ -11,7 +11,7 @@ function* getResources(action) {
 } // end GET resources
 
 function* resourcesSaga() {
-    yield takeLatest('GET_RESOURCES', getResources);
+    yield takeLatest('FETCH_RESOURCES', fetchResources);
 }
 
 export default resourcesSaga;

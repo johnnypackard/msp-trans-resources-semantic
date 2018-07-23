@@ -31,3 +31,7 @@
     background-image: url(/images/transflagbg.jpg) !important;
     background-size: cover !important;
 }
+
+body {
+  background-color: #F8F8FF;
+}

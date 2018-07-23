@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export function getResources() {
+export function fetchResources() {
     const config = {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true,

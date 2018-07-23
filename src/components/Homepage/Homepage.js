@@ -18,10 +18,10 @@ import {
 } from 'semantic-ui-react';
 
 const HomepageHeading = ({ mobile }) => (
-    <Container text>
+    <Container text style={{ marginTop: '5em' }}>
             <Header
                 as='h1'
-                content='MSP Transgender Resource Project'
+                content='MPLS Transgender Resource Project'
                 inverted
                 style={{
                     fontSize: mobile ? '2em' : '4em',
