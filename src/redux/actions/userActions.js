@@ -6,10 +6,10 @@ export const USER_ACTIONS = {
   REQUEST_DONE: 'REQUEST_DONE_USER_ACTION',
   LOGOUT: 'LOGOUT',
   USER_FETCH_FAILED: 'USER_FETCH_FAILED',
-  ADD_RESOURCES: 'ADD_RESOURCES',
-  SET_FAVORITE: 'SET_FAVORITE',
+  // ADD_RESOURCES: 'ADD_RESOURCES',
+  // SET_FAVORITE: 'SET_FAVORITE',
 };
 
-export const fetchUser = () => ({
-  type: USER_ACTIONS.FETCH_USER,
-});
+// export const fetchUser = () => ({
+//   type: USER_ACTIONS.FETCH_USER,
+// });

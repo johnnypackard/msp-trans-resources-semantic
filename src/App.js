@@ -19,6 +19,7 @@ import EducationPage from './components/EducationPage/EducationPage';
 import FinancialPage from './components/FinancialPage/FinancialPage';
 import HealthcarePage from './components/HealthcarePage/HealthcarePage';
 import LegalPage from './components/LegalPage/LegalPage';
+import VolunteerPage from './components/VolunteerPage/VolunteerPage';
 // import ProfilePage from './components/ProfilePage/ProfilePage';
 
 const App = () => (
@@ -74,6 +75,10 @@ const App = () => (
                  <Route
                   path="/legal"
                   component={LegalPage}
+                />
+                <Route
+                  path="/volunteer"
+                  component={VolunteerPage}
                 />
                 {/* <Route
                   path="/profile"

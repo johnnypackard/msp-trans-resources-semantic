@@ -1,14 +1,14 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 
-const resources = (state = [], action) => {
-    switch (action.type) {
-        case 'FETCH_RESOURCES':
-            return [...action.payload]
-        default:
-            return state;
-    }
-};
+// const resources = (state = [], action) => {
+//     switch (action.type) {
+//         case 'FETCH_RESOURCES':
+//             return [...action.payload]
+//         default:
+//             return state;
+//     }
+// };
 
-export default combineReducers({
-    resources,
-});
+// export default combineReducers({
+//     resources,
+// });

@@ -4,6 +4,7 @@ import { Grid, Card, Icon, Image, Button, Container } from 'semantic-ui-react';
 import AppHeader from '../AppHeader/AppHeader';
 
 function ResourcesPage(props) {
+    const { classes } = props;
 
     const handleClick = (pageLink) => () => {
         props.history.push(pageLink);
@@ -11,7 +12,7 @@ function ResourcesPage(props) {
         return(
             <div>
                  <Container>
-                    <AppHeader history={props.history}/>
+                    <AppHeader history={props.history} />
                 </Container>
                 <div>
                     <Container>
@@ -19,9 +20,7 @@ function ResourcesPage(props) {
                             <Grid.Row>
                                 <Grid.Column textAlign='center'>
                                     <Card>
-                                        <Image>
-                                            ...
-                                        </Image>
+                                        <Image src='/images/housing.png' />
                                         <Card.Content>
                                             <Card.Header>Housing</Card.Header>
                                             <Card.Meta>Do you need assistance with housing?</Card.Meta>
@@ -41,9 +40,7 @@ function ResourcesPage(props) {
                                 </Grid.Column>
                                 <Grid.Column textAlign='center'>
                                     <Card>
-                                        <Image>
-                                            ...
-                                        </Image>
+                                        <Image src='/images/financial.png' />
                                         <Card.Content>
                                             <Card.Header textAlign='center'>Financial</Card.Header>
                                             <Card.Meta textAlign='center'>Find financial assistance</Card.Meta>
@@ -64,9 +61,7 @@ function ResourcesPage(props) {
                                 </Grid.Column>
                                 <Grid.Column textAlign='center'>
                                     <Card>
-                                        <Image>
-                                            ...
-                                        </Image>
+                                        <Image src='/images/legal.png' />
                                         <Card.Content>
                                             <Card.Header textAlign='center'>Legal Services</Card.Header>
                                             <Card.Meta textAlign='center'>Name Change and Other Legal Needs</Card.Meta>
@@ -88,9 +83,7 @@ function ResourcesPage(props) {
                             <Grid.Row>
                                 <Grid.Column textAlign='center'>
                                     <Card>
-                                        <Image>
-                                            ...
-                                        </Image>
+                                        <Image src='/images/healthcare.png' />
                                         <Card.Content>
                                             <Card.Header textAlign='center'>Healthcare</Card.Header>
                                             <Card.Meta textAlign='center'>Mental and Medical Health</Card.Meta>
@@ -110,9 +103,7 @@ function ResourcesPage(props) {
                                 </Grid.Column>
                                 <Grid.Column textAlign='center'>
                                     <Card>
-                                        <Image>
-                                            ...
-                                        </Image>
+                                        <Image src='/images/education.png' />
                                         <Card.Content>
                                             <Card.Header textAlign='center'>Education</Card.Header>
                                             <Card.Meta textAlign='center'>School and University</Card.Meta>
@@ -132,9 +123,7 @@ function ResourcesPage(props) {
                                 </Grid.Column>
                                 <Grid.Column textAlign='center'>
                                     <Card>
-                                        <Image>
-                                            ...
-                                        </Image>
+                                        <Image src='/images/community.png' />
                                         <Card.Content>
                                             <Card.Header textAlign='center'>Community</Card.Header>
                                             <Card.Meta textAlign='center'>Local TBLGQI+ inclusive businesses.</Card.Meta>

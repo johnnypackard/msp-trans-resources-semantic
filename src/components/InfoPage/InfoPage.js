@@ -1,45 +1,30 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Grid, Card, Icon, Image, Button, Container } from 'semantic-ui-react';
+import AppHeader from '../AppHeader/AppHeader';
 
-import Nav from '../../components/Nav/Nav';
-import { USER_ACTIONS } from '../../redux/actions/userActions';
+function InfoPage(props) {
+    const { classes } = props;
 
-const mapStateToProps = state => ({
-  user: state.user,
-});
-
-class InfoPage extends Component {
-  componentDidMount() {
-    this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
-  }
-
-  componentDidUpdate() {
-    if (!this.props.user.isLoading && this.props.user.userName === null) {
-      this.props.history.push('home');
+    const handleClick = (pageLink) => () => {
+        props.history.push(pageLink);
     }
-  }
-
-  render() {
-    let content = null;
-
-    if (this.props.user.userName) {
-      content = (
-        <div>
-          <p>
-            Info Page
-          </p>
-        </div>
-      );
-    }
-
-    return (
-      <div>
-        <Nav />
-        { content }
-      </div>
-    );
-  }
+        return(
+            <div>
+                 <Container>
+                    <AppHeader history={props.history} />
+                </Container>
+                <div>
+                    <Container>
+                      
+                    </Container>                
+                </div>
+            </div>
+        ); 
 }
 
-// this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(InfoPage);
+InfoPage.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default InfoPage;

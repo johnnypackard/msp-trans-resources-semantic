@@ -86,8 +86,7 @@ class DesktopContainer extends Component {
                                 <Menu.Item as={Link} to='/homepage' active>
                                     Home
                                 </Menu.Item>
-                                <Menu.Item as={Link} to='/about'>About</Menu.Item>
-                                <Menu.Item as={Link} to='/donate'>Donate</Menu.Item>
+                                <Menu.Item as={Link} to='/info'>About</Menu.Item>
                                 <Menu.Item as={Link} to='/volunteer'>Volunteer</Menu.Item>
                                 <Menu.Item position='right'>
                                     <Button as={Link} to='/login' inverted={!fixed}>
@@ -220,7 +219,7 @@ const HomepageLayout = () => (
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column textAlign='center'>
-                        <Button size='huge' primary>How can I help?</Button>
+                        <Button as='a' href='http://www.hrc.org/your-elected-officials' size='huge' primary>How can I help?</Button>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
