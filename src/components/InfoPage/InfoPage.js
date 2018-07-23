@@ -36,7 +36,6 @@ class InfoPage extends Component {
       <div>
         <Nav />
         { content }
-        {/* <BusinessCard /> */}
       </div>
     );
   }

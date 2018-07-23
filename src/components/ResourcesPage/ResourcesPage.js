@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Card, Icon, Image, Button, Container } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 import AppHeader from '../AppHeader/AppHeader';
 
-class ResourcesPage extends Component {
-    render() {
+function ResourcesPage(props) {
+
+    const handleClick = (pageLink) => () => {
+        props.history.push(pageLink);
+    }
         return(
             <div>
                  <Container>
-                    <AppHeader />
+                    <AppHeader history={props.history}/>
                 </Container>
                 <div>
                     <Container>
@@ -28,7 +31,7 @@ class ResourcesPage extends Component {
                                         </Card.Content>
                                         <Card.Content extra>
                                             <div className='ui buttonLabeledIcon'>
-                                                <Button as={Link} to='/housing' fluid icon color='blue' size='large' labelPosition='left'>
+                                                <Button onClick={handleClick('/housing')} fluid icon color='blue' size='large' labelPosition='left'>
                                                     Housing
                                                     <Icon name='building' />
                                                 </Button>
@@ -51,7 +54,7 @@ class ResourcesPage extends Component {
                                         </Card.Content>
                                         <Card.Content extra>
                                             <div className='ui buttonLabeledIcon'>
-                                                <Button as={Link} to='/financial' fluid icon color='pink' size='large' labelPosition='left'>
+                                                <Button onClick={handleClick('/financial')} fluid icon color='pink' size='large' labelPosition='left'>
                                                     Financial
                                                     <Icon name='dollar sign' />
                                                 </Button>
@@ -73,7 +76,7 @@ class ResourcesPage extends Component {
                                         </Card.Content>
                                         <Card.Content extra>
                                             <div className='ui buttonLabeledIcon'>
-                                                <Button as={Link} to='/legal' fluid icon color='blue' size='large' labelPosition='left'>
+                                                <Button onClick={handleClick('/legal')} fluid icon color='blue' size='large' labelPosition='left'>
                                                     Legal
                                                     <Icon name='balance scale' />
                                                 </Button>
@@ -97,7 +100,7 @@ class ResourcesPage extends Component {
                                         </Card.Content>
                                         <Card.Content extra>
                                             <div className='ui buttonLabeledIcon'>
-                                                <Button as={Link} to='/healthcare' fluid icon color='pink' size='large' labelPosition='left'>
+                                                <Button onClick={handleClick('/healthcare')} fluid icon color='pink' size='large' labelPosition='left'>
                                                     Healthcare
                                                     <Icon name='talk' />
                                                 </Button>
@@ -119,7 +122,7 @@ class ResourcesPage extends Component {
                                         </Card.Content>
                                         <Card.Content extra>
                                             <div className='ui buttonLabeledIcon'>
-                                                <Button as={Link} to='/education' fluid icon color='blue' size='large' labelPosition='left'>
+                                                <Button onClick={handleClick('/education')} fluid icon color='blue' size='large' labelPosition='left'>
                                                     Education
                                                     <Icon name='graduation' />
                                                 </Button>
@@ -141,7 +144,7 @@ class ResourcesPage extends Component {
                                         </Card.Content>
                                         <Card.Content extra>
                                             <div className='ui buttonLabeledIcon'>
-                                                <Button as={Link} to='/community' fluid icon color='pink' size='large' labelPosition='left'>
+                                                <Button onClick={handleClick('/community')} fluid icon color='pink' size='large' labelPosition='left'>
                                                     Community
                                                     <Icon name='coffee' />
                                                 </Button>
@@ -154,10 +157,12 @@ class ResourcesPage extends Component {
                     </Container>                
                 </div>
             </div>
-        );    
-    }
+        ); 
 }
 
+ResourcesPage.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default ResourcesPage;
 

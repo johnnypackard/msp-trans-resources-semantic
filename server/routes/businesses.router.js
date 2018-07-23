@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
     console.log('user', req.user);
     
     if (req.isAuthenticated()) {
-        let queryText = `SELECT * FROM "businesses";`;
-        pool.query(queryText).then((result) => {
-            res.send(result.rows);
+        const queryText = `SELECT id, biz_name, contact_name, address, gender, race, language, image_url, biz_notes FROM businesses WHERE id=$1`
+        pool.query(queryText, [req.user.id]).then((results) => {
+            res.send(results.rows);
         }).catch((error) => {
             console.log(error);
             res.sendStatus(500);
@@ -33,9 +33,9 @@ router.post('/', (req, res) => {
         console.log(req.body);
         console.log('is authenticated?', req.isAuthenticated());
         console.log('user', req.user);
-        let queryText = 'INSERT INTO businesses (biz_name, contact_name, address, gender, race, language, image_url) VALUES ($1, $2, $3, $4, $5, $6, $7)'
+        const queryText = 'INSERT INTO businesses (biz_name, contact_name, address, gender, race, language, image_url, biz_notes) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)'
 
-        pool.query(queryText, [businesses.biz_name, businesses.contact_name, businesses.address, businesses.gender, businesses.race, businesses.language, businesses.image_url]).then((result) => {
+        pool.query(queryText, [businesses.biz_name, businesses.contact_name, businesses.address, businesses.gender, businesses.race, businesses.language, businesses.image_url, businesses_biz_notes]).then((result) => {
             res.sendStatus(201);
         }).catch((error) => {
             console.log(error);
@@ -51,7 +51,7 @@ router.delete('/:id', (req, res) => {
         console.log('shelf Delete route');
         console.log('is authenticated?', req.isAuthenticated());
         console.log('user', req.user);
-        let queryText = 'DELETE FROM businesses WHERE id=$1'
+        const queryText = 'DELETE FROM businesses WHERE id=$1'
         const id = req.params.id;
         pool.query(queryText, [id]).then((result) => {
             res.sendStatus(200);

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Grid, Card, Icon, Image, Container } from 'semantic-ui-react';
 import AppHeader from '../AppHeader/AppHeader';
 
-class HousingPage extends Component {
+class EducationPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,9 +12,9 @@ class HousingPage extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('/api/housing')
+        axios.get('/api/education')
             .then((response) => {
-                console.log('housing GET', response);
+                console.log('educationGET', response);
                 this.setState({
                     resourcesList: response.data
                 })
@@ -60,4 +60,4 @@ class HousingPage extends Component {
     }
 }
 
-export default HousingPage;
+export default EducationPage;

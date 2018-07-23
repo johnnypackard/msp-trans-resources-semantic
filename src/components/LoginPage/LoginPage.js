@@ -77,7 +77,7 @@ class LoginPage extends Component {
               <Image src={window.location.origin + '/images/TransIcon.png'} />
               Log-in to your account
             </Header>
-            <Form size='large'>
+            <Form size='large' onSubmit={this.login}>
               <Segment stacked>
                 <Form.Field>
                   <input
@@ -105,7 +105,6 @@ class LoginPage extends Component {
                     type="submit"
                     name="submit"
                     value="Log In" 
-                    onSubmit={this.login}
                   > 
                     Log-In
                   </Button> 
